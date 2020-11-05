@@ -47,7 +47,6 @@ $(document).ready(function () {
       location: $("#bar").val(),
       userName: userName
     }
-    console.log(formData)
     return formData;
   }
   function populatePosts(data) {
