@@ -22,10 +22,20 @@ body {
   padding-right: 200px;
 }
 
-.card-title{
-    color: white;
+.post-container {
+  color:white;
+  padding-right: 200px;
 }
 
+.card-title{
+  color: white;
+  text-align: center;
+}
+
+.card-body{
+  color: white;
+  text-align: center;
+}
 
 .button{
     color: black;
@@ -83,12 +93,14 @@ body {
     
     border: solid;
     border-color: darkgoldenrod;
-    
 }
-
 .btn {
     background-color: #cca000;
     color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .dropbtn {
@@ -101,9 +113,8 @@ body {
 }
 
 #logout{
-  
-float: right;
-margin-right: 5%;
+  float: right;
+  margin-right: 5%;
 }
 
 #my-pics {
