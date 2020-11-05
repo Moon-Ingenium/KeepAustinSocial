@@ -124,3 +124,13 @@ body {
   width: 450px;
   max-height: 750px;
  }
+
+ .member-name {
+   text-align: center;
+   font-family: 'Permanent Marker', cursive;
+  color: black;
+  text-shadow: -1px -1px 0 #cca000, 1px -1px 0 #cca000, -1px 1px 0 #cca000, 1px 1px 0 #cca000;
+  font-size: 2.5vmin;
+  font-weight: 700;
+
+ }
