@@ -28,17 +28,24 @@ $(document).ready(function () {
       console.log(data);
       for (var i = 0; i < data.businesses.length; i++) {
         // for(var i = 0; i < 2; i++){
-        var business = data.businesses[i]
-        var link = $("<a>").text(business.name).attr("href", business.url)
-        var price = $("<price>").text(business.price).attr("text", business.price)
-        var rating = $("<rating>").text(business.rating).attr("text", business.rating)
-        var location = $("<location>").text(business.location.address1).attr("text", business.location)
-        var image = $("<img>").attr("src", business.image_url).addClass("yelp-pic")
-        $(".business-name").append(link)
-        $(".price-amount").append(price)
-        $(".rating-star").append(rating)
-        $(".business-location").append(location)
-        $(".yelp-img").append(image)
+        var business = data.businesses[i];
+      var yelpContainer = $(".yelp-container");
+        var businessEl = $("<div>").addClass("card");
+        var businessBody = $("<div>").addClass("card-body");
+        var link = $("<a>").attr("href", business.url);
+       var businessTitle = $("<div>").addClass("card-title").text(business.name);
+        var price = $("<p>").text("Price:" + " " + business.price);
+        var rating = $("<p>").text("Rating:" + " " + business.rating);
+        var location = $("<p>").text(business.location.address1);
+        var image = $("<img>").attr("src", business.image_url).addClass("yelp-pic");
+        yelpContainer.append(businessEl);
+        businessEl.append(businessBody);
+        businessBody.append(businessTitle);
+     businessBody.append(image);
+      businessBody.append(link);
+        businessBody.append(location);
+       businessBody.append(rating);
+        businessBody.append(price);
 
       }
     })
