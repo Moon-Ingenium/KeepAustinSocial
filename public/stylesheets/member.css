@@ -30,6 +30,11 @@ body {
 .card-title{
   color: white;
   text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  text-shadow: -1px -1px 0 #cca000, 1px -1px 0 #cca000, -1px 1px 0 #cca000, 1px 1px 0 #cca000;
+  font-size: 2vmin;
+  font-weight: 450;
 }
 
 .card-body{
