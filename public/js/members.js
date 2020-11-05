@@ -31,7 +31,7 @@ $(document).ready(function () {
         var business = data.businesses[i];
       var yelpContainer = $(".yelp-container");
         var businessEl = $("<div>").addClass("card");
-        var businessBody = $("<div>").addClass("card-body");
+        var businessBody = $("<div>").addClass("yelp-card-body");
         var link = $("<a>").attr("href", business.url);
        var businessTitle = $("<div>").addClass("card-title").text(business.name);
         var price = $("<p>").text("Price:" + " " + business.price);
