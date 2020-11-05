@@ -68,13 +68,13 @@ module.exports = function (app) {
     });
 
     app.get("/api/businesses/", function (req, res) {
-      
+      let API_KEY = "I2SLuyyKWHvDg8heVcUEXkrNxuWiWE-1Qe2SEVE2bGwJ-yk4bNbUoo4_30UN0cPCLAL5csPI17_pUKwgJiqFn4EHzK2KakXxtiLb5Q6BXoM990rSIziXHBLRWEKgX3Yx"
       // REST
       var ENDPOINT = `businesses/search?location=${req.query.zip}&locale=en_US&categories=bars&term=${req.query.q}`
       let yelpREST = axios.create({
         baseURL: "https://api.yelp.com/v3/",
         headers: {
-          Authorization: `Bearer ${process.env.YKEY}`,
+          Authorization: `Bearer ${"I2SLuyyKWHvDg8heVcUEXkrNxuWiWE-1Qe2SEVE2bGwJ-yk4bNbUoo4_30UN0cPCLAL5csPI17_pUKwgJiqFn4EHzK2KakXxtiLb5Q6BXoM990rSIziXHBLRWEKgX3Yx"}`,
           "Content-type": "application/json",
         },
       })
