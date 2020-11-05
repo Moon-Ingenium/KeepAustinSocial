@@ -1,0 +1,52 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+
+body {
+  background: url('https://images.pexels.com/photos/4784/alcohol-bar-party-cocktail.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.memberbody {
+  background-color: grey;
+}
+
+.loginform {
+  float: right;
+  margin-top: 10%;
+  color: white;
+}
+.keepaustindrunk {
+  font-family: 'Permanent Marker', cursive;
+  margin: 0 auto;
+  font-weight: 800;
+  font-size: 60px;
+  color: black;
+}
+
+h3 {
+  color: rgb(175, 0, 0);
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 800;
+}
+
+.signup1 {
+  text-align: center;
+}
+.signup2 {
+  text-align: center;
+  text-decoration: underline;
+  color:greenyellow;
+  font-weight: 800;
+}
