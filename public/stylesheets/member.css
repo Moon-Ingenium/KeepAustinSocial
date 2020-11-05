@@ -134,3 +134,13 @@ body {
   font-weight: 700;
 
  }
+ .yelp-pic{
+  /* height: 5%; */
+  width: 200px;
+}
+
+.yelp-body{
+   width: 400px;
+   border-radius: 5px;
+   border: solid  2px white;
+ }
