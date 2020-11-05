@@ -9,7 +9,7 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
   // get posts from database
- $.get("/api/posts", function (data) {
+  $.get("/api/posts", function (data) {
     console.log("Posts", data);
     var posts = data;
   }).then(function (response) {
@@ -20,24 +20,28 @@ $(document).ready(function () {
   })
 
   $(document).on('click', '.searchbtn', function (e) {
-
     var searchInput = $("#searchInput").val()
     var zipCode = $("#zipCode").val()
     var store = "Torchys"
     $.get(`/api/businesses?q=${searchInput}&zip=${zipCode}`).then(data => {
-      $(".card-body").empty()
+      // 
+      console.log(data);
       for (var i = 0; i < data.businesses.length; i++) {
         // for(var i = 0; i < 2; i++){
         var business = data.businesses[i]
         var link = $("<a>").text(business.name).attr("href", business.url)
-        var image = $("<img>").attr("src", business.image_url)
-        $(".card-body").append(link)
-        $(".card-body").append(image)
+        var price = $("<price>").text(business.price).attr("text", business.price)
+        var rating = $("<rating>").text(business.rating).attr("text", business.rating)
+        var location = $("<location>").text(business.location.address1).attr("text", business.location)
+        var image = $("<img>").attr("src", business.image_url).addClass("yelp-pic")
+        $(".business-name").append(link)
+        $(".price-amount").append(price)
+        $(".rating-star").append(rating)
+        $(".business-location").append(location)
+        $(".yelp-img").append(image)
+
       }
-
-      console.log(data)
     })
-
   })
 
   function formData() {
@@ -98,7 +102,6 @@ $(document).ready(function () {
       alert("The data-id of clicked item is: " + likentm);
     });
   });
-
 
   $(document).on('click', '.dropbtn', function () {
     console.log("test");

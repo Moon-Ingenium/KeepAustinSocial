@@ -70,7 +70,7 @@ module.exports = function (app) {
     app.get("/api/businesses/", function (req, res) {
       
       // REST
-      var ENDPOINT = `businesses/search?location=${req.query.zip}&locale=en_US&categories=bars&term=${req.query.q}`
+      var ENDPOINT = `businesses/search?location=${req.query.zip}&locale=en_US&categories=bars&term=${req.query.q}&limit=1`
       let yelpREST = axios.create({
         baseURL: "https://api.yelp.com/v3/",
         headers: {
