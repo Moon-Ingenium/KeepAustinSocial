@@ -40,6 +40,9 @@ $(document).ready(function () {
         $(".business-location").append(location)
         $(".yelp-img").append(image)
       }})
+    })
+
+
         function formData() {
           // send data to database
           var formData = {
