@@ -113,3 +113,7 @@ $(document).ready(function () {
     console.log("test");
   });
 });
+
+$(document).on('click', '#logout', function () {
+  console.log("test");
+})
