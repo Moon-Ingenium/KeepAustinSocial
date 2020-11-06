@@ -38,7 +38,7 @@ body {
 }
 
 .card-body{
-  color: white;
+  color: darkgoldenrod;
   text-align: center;
 }
 
@@ -138,4 +138,24 @@ body {
   font-size: 2.5vmin;
   font-weight: 700;
 
+ }
+ .yelp-pic{
+  /* height: 5%; */
+  width: 200px;
+}
+
+.card{
+   width: 400px;
+   border-radius: 5px;
+   border: solid  2px  darkgoldenrod;
+   color: darkgoldenrod;
+   text-align: center;
+ }
+ .card-title{
+  color: darkgoldenrod;
+  font-size: x-large;
+ }
+ small{
+   float: right;
+   color:white;
  }

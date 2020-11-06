@@ -9,7 +9,7 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
   // get posts from database
- $.get("/api/posts", function (data) {
+  $.get("/api/posts", function (data) {
     console.log("Posts", data);
     var posts = data;
   }).then(function (response) {
@@ -20,24 +20,35 @@ $(document).ready(function () {
   })
 
   $(document).on('click', '.searchbtn', function (e) {
-
     var searchInput = $("#searchInput").val()
     var zipCode = $("#zipCode").val()
     var store = "Torchys"
     $.get(`/api/businesses?q=${searchInput}&zip=${zipCode}`).then(data => {
-      $(".card-body").empty()
+      // 
+      console.log(data);
       for (var i = 0; i < data.businesses.length; i++) {
         // for(var i = 0; i < 2; i++){
-        var business = data.businesses[i]
-        var link = $("<a>").text(business.name).attr("href", business.url)
-        var image = $("<img>").attr("src", business.image_url)
-        $(".card-body").append(link)
-        $(".card-body").append(image)
+        var business = data.businesses[i];
+      var yelpContainer = $(".yelp-container");
+        var businessEl = $("<div>").addClass("card");
+        var businessBody = $("<div>").addClass("yelp-card-body");
+        var link = $("<a>").attr("href", business.url);
+       var businessTitle = $("<div>").addClass("card-title").text(business.name);
+        var price = $("<p>").text("Price:" + " " + business.price);
+        var rating = $("<p>").text("Rating:" + " " + business.rating);
+        var location = $("<p>").text(business.location.address1);
+        var image = $("<img>").attr("src", business.image_url).addClass("yelp-pic");
+        yelpContainer.append(businessEl);
+        businessEl.append(businessBody);
+        businessBody.append(businessTitle);
+     businessBody.append(image);
+      businessBody.append(link);
+        businessBody.append(location);
+       businessBody.append(rating);
+        businessBody.append(price);
+
       }
-
-      console.log(data)
     })
-
   })
 
   function formData() {
@@ -98,7 +109,6 @@ $(document).ready(function () {
       alert("The data-id of clicked item is: " + likentm);
     });
   });
-
 
   $(document).on('click', '.dropbtn', function () {
     console.log("test");
