@@ -30,10 +30,15 @@ body {
 .card-title{
   color: white;
   text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  text-shadow: -1px -1px 0 #cca000, 1px -1px 0 #cca000, -1px 1px 0 #cca000, 1px 1px 0 #cca000;
+  font-size: 2vmin;
+  font-weight: 450;
 }
 
 .card-body{
-  color: white;
+  color: darkgoldenrod;
   text-align: center;
 }
 
@@ -132,5 +137,33 @@ body {
   text-shadow: -1px -1px 0 #cca000, 1px -1px 0 #cca000, -1px 1px 0 #cca000, 1px 1px 0 #cca000;
   font-size: 2.5vmin;
   font-weight: 700;
+  padding-left: 10px;
 
+ }
+ .yelp-pic{
+  /* height: 5%; */
+  width: 200px;
+}
+
+.card{
+   width: 400px;
+   border-radius: 5px;
+   border: solid  2px  darkgoldenrod;
+   color: darkgoldenrod;
+   text-align: center;
+ }
+ .card-title{
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  text-shadow: -1px -1px 0 #cca000, 1px -1px 0 #cca000, -1px 1px 0 #cca000, 1px 1px 0 #cca000;
+  font-weight: 700;
+  font-size: x-large;
+ }
+ small{
+   float: right;
+   color:white;
+ }
+
+ #svgLikeBttn {
+   text-align: center;
  }
