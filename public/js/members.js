@@ -29,6 +29,7 @@ $(document).ready(function () {
       console.log(data);
       for (var i = 0; i < data.businesses.length; i++) {
         // for(var i = 0; i < 2; i++){
+
         var business = data.businesses[i];
         var yelpContainer = $(".yelp-container");
         var businessEl = $("<div>").addClass("card");
@@ -117,3 +118,4 @@ $(document).ready(function () {
 $(document).on('click', '#logout', function () {
   console.log("test");
 })
+
