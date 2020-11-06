@@ -1,5 +1,6 @@
 var userName;
 var containerEl = $(".post-container");
+var counter = 0;
 
 $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
@@ -29,11 +30,11 @@ $(document).ready(function () {
       for (var i = 0; i < data.businesses.length; i++) {
         // for(var i = 0; i < 2; i++){
         var business = data.businesses[i];
-      var yelpContainer = $(".yelp-container");
+        var yelpContainer = $(".yelp-container");
         var businessEl = $("<div>").addClass("card");
         var businessBody = $("<div>").addClass("yelp-card-body");
-        var link = $("<a>").attr("href", business.url);
-       var businessTitle = $("<div>").addClass("card-title").text(business.name);
+        var businessTitle = $("<h3>");
+        var businessLink = $("<a>").addClass("card-title").attr("href", business.url).text(business.name);
         var price = $("<p>").text("Price:" + " " + business.price);
         var rating = $("<p>").text("Rating:" + " " + business.rating);
         var location = $("<p>").text(business.location.address1);
@@ -41,10 +42,10 @@ $(document).ready(function () {
         yelpContainer.append(businessEl);
         businessEl.append(businessBody);
         businessBody.append(businessTitle);
-     businessBody.append(image);
-      businessBody.append(link);
+        businessTitle.append(businessLink);
+        businessBody.append(image);
         businessBody.append(location);
-       businessBody.append(rating);
+        businessBody.append(rating);
         businessBody.append(price);
 
       }
@@ -74,15 +75,25 @@ $(document).ready(function () {
       "margin-top":
         "-10px"
     });
-    var cardButton = $("<button>").addClass("btn btn-outline-warning")/*.attr("data-id", data.id)*/;
+    var cardButton = $("<button>").addClass("btn btn-outline-warning like-button").attr("data-id", data.id).attr("data-like", 0);
     $('#svgLikeBttn').last().clone().appendTo(cardButton);
+    // Click event to increase number with like button
+    cardButton.click(function (event) {
+      var likeBttn = $(event.target);
+      var amountClicked = $(this).attr("data-like");
+      amountClicked++;
+      $(this).attr("data-like", amountClicked);
+      likeBttn.text($(this).attr("data-like"));
+
+    });
+
     postEl.append(cardEl);
     cardEl.append(cardBody);
     cardBody.append(cardTitle);
     cardBody.append(cardText);
     cardBody.append(newPostUsername);
     cardBody.append(cardButton);
-    // }
+
   }
   // db posts , username, created_date, location, body
   $(document).on('click', '#post-button', function (event) {
@@ -96,18 +107,6 @@ $(document).ready(function () {
       populatePosts(data);
     }
     );
-  });
-  // Click event to increase number with like button
-  var counter = 0;
-
-  $(document).ready(function () {
-    // data attr of id and then click on like 
-    $("#likes").click(function (event) {
-      var likeBttn = $(event.target)/*.attr()*/;
-      counter++;
-      likeBttn.text(counter);
-      alert("The data-id of clicked item is: " + likentm);
-    });
   });
 
   $(document).on('click', '.dropbtn', function () {
